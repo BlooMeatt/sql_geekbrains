@@ -50,4 +50,72 @@ ALTER TABLE  lesson
 ALTER TABLE  lesson
 	ADD CONSTRAINT desk_id_fk
 		FOREIGN KEY (desk_id) REFERENCES desks(id)
-			ON DELETE CASCADE;			
+			ON DELETE CASCADE;
+			
+ALTER TABLE  student
+	ADD CONSTRAINT class_id_fk
+		FOREIGN KEY (class_id) REFERENCES classes(id)
+			ON DELETE CASCADE;
+
+ALTER TABLE desks
+	ADD CONSTRAINT room_id_fk
+		FOREIGN KEY (room_id) REFERENCES room(id)
+			ON DELETE CASCADE;
+			
+-- Заполняем таблицы
+INSERT INTO classes (name)
+VALUES
+  ("Huádōng"),
+  ("Castilla y León"),
+  ("PD"),
+  ("Berlin"),
+  ("Jammu and Kashmir"),
+  ("TR"),
+  ("O"),
+  ("Jalisco"),
+  ("CAJ"),
+  ("Biobío");
+		
+INSERT INTO student (name,class_id)
+VALUES
+  ("Rajah Meyers",1),
+  ("Chaim Curtis",6),
+  ("Maris Shannon",3),
+  ("Cyrus Fitzgerald",10),
+  ("Teegan Wilkerson",10),
+  ("Francis Hinton",7),
+  ("Whilemina Steele",8),
+  ("Anthony Whitaker",5),
+  ("Jordan Willis",7),
+  ("Athena Benjamin",9);
+
+INSERT INTO room (room_name)
+VALUES
+	("Физика"),
+	("Математика"),
+	("География"),
+	("Химия"),
+	("Биология");
+
+INSERT INTO desks (room_id)
+VALUES
+  (2),
+  (5),
+  (1),
+  (2),
+  (3),
+  (3),
+  (2),
+  (4),
+  (2),
+  (1),
+  (5),
+  (4),
+  (1),
+  (4),
+  (4),
+  (5),
+  (2),
+  (3),
+  (4),
+  (2);
